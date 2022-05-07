@@ -1,3 +1,6 @@
+from multiprocessing import freeze_support
+freeze_support()
+
 import undetected_chromedriver as uc
 import time
 import pyautogui as pg
@@ -52,7 +55,9 @@ if __name__ == '__main__':
             time.sleep(8)
             try:
                 driver.find_element_by_xpath('//*[@id="app"]/div[2]/div[2]/div/div[1]/div[1]/div[2]/div/div[1]/button').click()
+                print("FOLLOW id "+idpost)
             except:
+                print("User Not Found!")
                 continue
             time.sleep(10)
             db = db+idpost+","
